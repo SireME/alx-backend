@@ -27,9 +27,12 @@ class FIFOCache(BaseCaching):
         if key is not None and item is not None:
             stack = self.cache_data
             if len(stack) == BaseCaching.MAX_ITEMS:
-                first_key = list(stack.keys())[0]
-                stack.pop(first_key)
-                print(f'DISCARD: {first_key}')
+                if key not in stack:
+                    first_key = list(stack.keys())[0]
+                    stack.pop(first_key)
+                    print(f'DISCARD: {first_key}')
+                else:
+                    del stack[key]
             stack[key] = item
 
     def get(self, key):
