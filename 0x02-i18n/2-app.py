@@ -26,8 +26,7 @@ def get_locale() -> str:
     """
     determine best match for users preferrred lanaguage
     """
-    rq = request.accept_languages
-    return rq.best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/')
