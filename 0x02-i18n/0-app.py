@@ -2,12 +2,13 @@
 This module is a simple flask app setup with a single route
 """
 from flask import Flask, render_template
+from flask.wrappers import Response
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 
 @app.route("/")
-def index():
+def index() -> Response:
     """
     default route for app
     """
