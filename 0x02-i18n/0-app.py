@@ -1,19 +1,17 @@
+#!/usr/bin/env python3
 """
-This module is a simple flask app setup with a single route
+Basic Flask app
 """
 from flask import Flask, render_template
-from flask.wrappers import Response
 
-app: Flask = Flask(__name__)
+app = Flask(__name__)
 
 
-@app.route("/")
-def index() -> Response:
-    """
-    default route for app
-    """
+@app.route('/')
+def index():
+    """Route for the root URL."""
     return render_template('0-index.html')
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port="5000")
