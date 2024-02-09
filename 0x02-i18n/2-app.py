@@ -3,7 +3,8 @@
 Basic Flask app with basic i18n configs
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
+import os
 
 app = Flask(__name__)
 babel = Babel(app)
