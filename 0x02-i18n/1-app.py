@@ -14,8 +14,8 @@ class Config:
     default configs for babel
     """
     LANGUAGES = ['en', 'fr']
-    BABEL_DEFAUL_LOCALE = 'en'
-    BABEL_DEFAUL_TIMEZONE = 'UTC'
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 app.config.from_object(Config)
